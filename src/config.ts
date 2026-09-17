@@ -101,6 +101,9 @@ export const INITIAL_INVITATION_DATA: InvitationData = {
   whatsappNumber: "573138431700",
 
   // TEXTOS DE PRESENTACIÓN Y FAMILIA
+  parentsTitle: "MIS PADRES",
+  parentsNames: "Manuel Cadena y Yaneth Tafur",
+  inviteCallToAction: "Te invitamos a acompañarnos el día:",
   romanticMessage:
     "Hay momentos que se convierten en recuerdos para toda la vida. Hoy quiero compartir contigo uno de los días más especiales de mi vida.",
 

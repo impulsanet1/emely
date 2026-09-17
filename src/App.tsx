@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { FloatingPetalsCanvas } from './components/FloatingPetalsCanvas';
 import { HeroEditorial } from './components/HeroEditorial';
 import { EventPresentation } from './components/EventPresentation';
-import { CountdownSection } from './components/CountdownSection';
 import { CeremonyAndReception } from './components/CeremonyAndReception';
 import { DressCodeAndGifts } from './components/DressCodeAndGifts';
+import { CountdownSection } from './components/CountdownSection';
 import { RsvpSection } from './components/RsvpSection';
 import { ClosingSection } from './components/ClosingSection';
 import { INITIAL_INVITATION_DATA } from './config';
@@ -18,7 +18,7 @@ export default function App() {
       {/* Fondo delicado con pétalos y partículas suaves */}
       <FloatingPetalsCanvas intensity="gentle" />
 
-      {/* Portada Principal Compacta estilo Moon Agencia Creativa */}
+      {/* 1. Portada: Imagen, Nombre y Mis XV Años */}
       <HeroEditorial
         celebrantName={data.celebrantName}
         celebrationTitle={data.celebrationTitle}
@@ -30,22 +30,18 @@ export default function App() {
         locationCountry={data.locationCountry}
       />
 
-      {/* Contenido Editorial de la Invitación */}
-      <main className="relative z-10 space-y-1 pb-6">
-        {/* Presentación Romántica y Familiar */}
+      {/* Contenido Editorial con estricto orden jerárquico */}
+      <main className="relative z-10 space-y-2 pb-8">
+        {/* 2. Momento Especial / Presentación de los Padres */}
         <EventPresentation
           celebrantName={data.celebrantName}
           romanticMessage={data.romanticMessage}
-          familyMessage={data.familyMessage}
+          parentsTitle={data.parentsTitle}
+          parentsNames={data.parentsNames}
+          inviteCallToAction={data.inviteCallToAction}
         />
 
-        {/* Cuenta Regresiva Dinámica */}
-        <CountdownSection
-          eventDate={data.eventDate}
-          eventIsoDate={data.eventIsoDate}
-        />
-
-        {/* Lugar de la Celebración (Recepción & Fiesta) */}
+        {/* 3. Dónde y Cuándo: Lugar de la Celebración (Recepción & Fiesta) */}
         <CeremonyAndReception
           ceremonyTitle={data.ceremonyTitle}
           ceremonyTime={data.ceremonyTime}
@@ -61,7 +57,7 @@ export default function App() {
           eventDate={data.eventDate}
         />
 
-        {/* Código de Vestimenta y Lluvia de Sobres */}
+        {/* 4. Código de Vestimenta y Detalle / Lluvia de Sobres */}
         <DressCodeAndGifts
           dressCodeTitle={data.dressCodeTitle}
           dressCodeDescription={data.dressCodeDescription}
@@ -70,13 +66,19 @@ export default function App() {
           giftDescription={data.giftDescription}
         />
 
-        {/* Confirmación de Asistencia (RSVP por WhatsApp) */}
+        {/* 5. Cuenta Regresiva (Colocada abajo, antes de la confirmación) */}
+        <CountdownSection
+          eventDate={data.eventDate}
+          eventIsoDate={data.eventIsoDate}
+        />
+
+        {/* 6. Confirmación de Asistencia (RSVP directo por WhatsApp) */}
         <RsvpSection
           celebrantName={data.celebrantName}
           whatsappNumber={data.whatsappNumber}
         />
 
-        {/* Cierre y Despedida */}
+        {/* 7. Despedida y Agradecimiento */}
         <ClosingSection
           celebrantName={data.celebrantName}
           closingMessage={data.closingMessage}

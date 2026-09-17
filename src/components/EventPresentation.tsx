@@ -1,64 +1,85 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Heart, Sparkles } from 'lucide-react';
-import { HelloKittyBow, GoldenSparkle } from './HelloKittyBow';
+import { Heart, Calendar, Clock } from 'lucide-react';
+import { HelloKittyBow } from './HelloKittyBow';
 
 interface EventPresentationProps {
   celebrantName: string;
   romanticMessage: string;
   familyMessage?: string;
+  parentsTitle?: string;
+  parentsNames?: string;
+  inviteCallToAction?: string;
+  specialDateText?: string;
 }
 
 export const EventPresentation: React.FC<EventPresentationProps> = ({
   celebrantName,
   romanticMessage,
-  familyMessage = 'Con la bendición de Dios y el amor de mi familia, tengo el honor de invitarte a celebrar mis quince años.',
+  parentsTitle = 'MIS PADRES',
+  parentsNames = 'Manuel Cadena y Yaneth Tafur',
+  inviteCallToAction = 'Te invitamos a acompañarnos el día:',
 }) => {
   return (
-    <section id="presentation-section" className="py-2.5 px-3 max-w-md mx-auto">
+    <section id="presentation-section" className="py-6 px-4 max-w-md mx-auto text-center">
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="relative bg-white/95 border border-rose-200/90 rounded-3xl p-4 sm:p-5 shadow-md shadow-rose-100/50 text-center"
+        className="flex flex-col items-center"
       >
-        {/* Emblema con moño Hello Kitty */}
-        <div className="flex justify-center mb-2">
-          <div className="inline-flex items-center justify-center gap-1.5 px-3 py-0.5 rounded-full bg-rose-50 border border-rose-200 text-rose-700">
-            <Sparkles className="w-3 h-3 text-amber-500" />
-            <span className="text-[9px] uppercase font-bold tracking-wider">
-              Momento Especial
-            </span>
-            <HelloKittyBow size={16} color="pink" />
-          </div>
+        {/* Emblema superior con moño */}
+        <div className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-rose-100/60 border border-rose-200/70 text-rose-700 mb-3">
+          <span className="text-[10px] uppercase font-bold tracking-widest">
+            Momento Especial
+          </span>
+          <HelloKittyBow size={16} color="pink" />
         </div>
 
-        {/* Mensaje de bendición familiar */}
-        <p className="text-[11px] font-semibold text-rose-600 uppercase tracking-wide leading-relaxed mb-2">
-          {familyMessage}
-        </p>
+        {/* Sección: MIS PADRES */}
+        <div className="mb-3">
+          <span className="text-[11px] font-bold text-rose-600 uppercase tracking-[0.25em] block mb-1">
+            {parentsTitle}
+          </span>
+          <h3 className="font-serif-elegant text-xl sm:text-2xl font-bold text-slate-800 tracking-wide">
+            {parentsNames}
+          </h3>
+        </div>
 
-        {/* Cita principal */}
-        <p className="font-serif-elegant text-sm sm:text-base text-slate-800 leading-relaxed italic my-1.5">
+        {/* Cita reflexiva / emotiva */}
+        <p className="font-serif-elegant text-base text-slate-700 leading-relaxed italic my-2 max-w-xs mx-auto">
           “{romanticMessage}”
         </p>
 
-        {/* Separador decorativo con corazones */}
-        <div className="my-2.5 flex items-center justify-center gap-2">
-          <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-rose-300" />
-          <Heart className="w-3 h-3 text-rose-400 fill-rose-300 animate-pulse" />
-          <GoldenSparkle size={12} />
-          <Heart className="w-3 h-3 text-rose-400 fill-rose-300 animate-pulse" />
-          <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-rose-300" />
+        {/* Separador sutil */}
+        <div className="my-3.5 flex items-center justify-center gap-2.5 w-full max-w-xs">
+          <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-rose-300/80" />
+          <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-300/60 shrink-0" />
+          <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-rose-300/80" />
         </div>
 
-        {/* Firma caligráfica */}
-        <p className="font-script text-3xl text-rose-600">
-          {celebrantName}
+        {/* Te invitamos a acompañarnos el día: */}
+        <p className="text-xs sm:text-sm font-semibold text-rose-700 uppercase tracking-wider mb-2">
+          {inviteCallToAction}
         </p>
-        <p className="text-[9px] text-rose-400 tracking-widest uppercase font-semibold">
-          Quinceañera
+
+        {/* Fecha y hora en dorado */}
+        <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-1.5 px-4 py-2 rounded-2xl bg-amber-100/50 border border-amber-300/60 mb-2">
+          <div className="flex items-center gap-1.5 text-amber-800 font-serif-elegant text-base sm:text-lg font-bold tracking-wide">
+            <Calendar className="w-4 h-4 text-amber-700" />
+            <span>Domingo, 1 de Noviembre 2026</span>
+          </div>
+          <span className="hidden sm:inline text-amber-500 font-bold">•</span>
+          <div className="flex items-center gap-1 text-amber-800 font-medium text-xs sm:text-sm">
+            <Clock className="w-3.5 h-3.5 text-amber-700" />
+            <span>7:00 PM</span>
+          </div>
+        </div>
+
+        {/* Nombre caligráfico */}
+        <p className="font-script text-3xl sm:text-4xl text-rose-600 mt-1">
+          {celebrantName}
         </p>
       </motion.div>
     </section>

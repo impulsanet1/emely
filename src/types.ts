@@ -46,6 +46,9 @@ export interface InvitationData {
   giftDescription: string;
 
   whatsappNumber: string; // e.g. "573000000000" (sin el +, para WhatsApp API)
+  parentsTitle?: string;
+  parentsNames?: string;
+  inviteCallToAction?: string;
   romanticMessage: string;
   familyMessage: string;
   closingMessage: string;
