@@ -1,0 +1,6 @@
+{
+  "name": "Mis XV Años - Emely",
+  "description": "Invitación digital elegante y moderna para los XV años de Emely en Suárez, Tolima, con temática Hello Kitty y estética romántica K-drama.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

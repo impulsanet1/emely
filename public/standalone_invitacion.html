@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis XV Años - Emely | Suárez, Tolima</title>
+  <meta name="description" content="Invitación digital para los XV años de Emely en Suárez, Tolima, Colombia." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            script: ['Great Vibes', 'cursive'],
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(2deg); }
+    }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+    .rose-gold-gradient {
+      background: linear-gradient(135deg, #f472b6 0%, #fb7185 50%, #eab308 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-rose-50/90 via-pink-50/40 to-rose-100/60 text-slate-800 font-sans antialiased min-h-screen relative overflow-x-hidden selection:bg-rose-200">
+
+  <!-- Canvas de pétalos suaves -->
+  <canvas id="petals-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+  <!-- Barra de Navegación Fija Compacta para Celular -->
+  <header class="sticky top-2 z-40 max-w-md mx-auto px-3">
+    <nav class="flex items-center justify-between px-3.5 py-2 rounded-full bg-white/95 border border-rose-200/90 shadow-md backdrop-blur-md">
+      <div class="flex items-center gap-1.5">
+        <svg width="20" height="15" viewBox="0 0 100 72" fill="none">
+          <path d="M50 36 C38 20, 10 12, 10 32 C10 48, 38 46, 50 36 Z" fill="#ec4899" stroke="#db2777" stroke-width="3" />
+          <path d="M50 36 C62 20, 90 12, 90 32 C90 48, 62 46, 50 36 Z" fill="#ec4899" stroke="#db2777" stroke-width="3" />
+          <circle cx="50" cy="36" r="12" fill="#db2777" stroke="#be123c" stroke-width="2.5" />
+          <circle cx="47" cy="33" r="3.5" fill="#ffffff" opacity="0.8" />
+        </svg>
+        <span class="font-serif font-bold text-slate-800 text-xs tracking-wide">Emely</span>
+        <span class="font-script text-rose-500 text-sm">Mis XV</span>
+      </div>
+      <div class="flex items-center gap-1 text-[11px] font-medium text-slate-600">
+        <a href="#ceremony-section" class="px-2 py-1 rounded-full hover:bg-rose-50 hover:text-rose-600">Lugares</a>
+        <a href="#itinerary-section" class="px-2 py-1 rounded-full hover:bg-rose-50 hover:text-rose-600">Horario</a>
+        <a href="#rsvp-section" class="px-2.5 py-1 rounded-full bg-rose-500 text-white font-semibold hover:bg-rose-600">
+          Confirmar
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================
+       1. PORTADA COMPACTA
+       ======================================================== -->
+  <section class="min-h-[75vh] flex flex-col items-center justify-center text-center px-3.5 py-8 relative z-10">
+    <div class="w-full max-w-sm bg-white/90 border border-rose-200/90 rounded-3xl p-6 shadow-xl shadow-rose-200/40 backdrop-blur-md">
+      <!-- Moño Hello Kitty -->
+      <div class="flex flex-col items-center justify-center mb-3">
+        <div class="p-2 bg-white rounded-full border border-rose-200 shadow-sm">
+          <svg width="38" height="28" viewBox="0 0 100 72" fill="none">
+            <path d="M50 36 C38 20, 10 12, 10 32 C10 48, 38 46, 50 36 Z" fill="#ec4899" stroke="#db2777" stroke-width="3" />
+            <path d="M50 36 C62 20, 90 12, 90 32 C90 48, 62 46, 50 36 Z" fill="#ec4899" stroke="#db2777" stroke-width="3" />
+            <circle cx="50" cy="36" r="12" fill="#db2777" stroke="#be123c" stroke-width="2.5" />
+            <circle cx="47" cy="33" r="3.5" fill="#ffffff" opacity="0.8" />
+          </svg>
+        </div>
+        <span class="text-[10px] uppercase tracking-[0.25em] text-rose-500 font-semibold mt-2">Nuestra Quinceañera</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-slate-800 mb-1">
+        <span class="rose-gold-gradient">EMELY</span>
+      </h1>
+      <p class="font-script text-2xl sm:text-3xl text-rose-600 mb-3">Mis XV Años</p>
+
+      <p class="text-xs text-slate-600 font-light italic mb-4 max-w-xs mx-auto leading-relaxed">
+        “Hay momentos que se convierten en recuerdos para toda la vida. Hoy quiero compartir contigo este día tan especial.”
+      </p>
+
+      <div class="p-3 rounded-2xl bg-rose-50/85 border border-rose-200/80 text-[11px] font-semibold text-slate-700 space-y-1.5 mb-1">
+        <div class="text-rose-600 font-semibold">📅 Domingo, 1 de Noviembre de 2026 • 7:00 PM</div>
+        <div class="text-slate-700 font-medium">📍 3529+R76 Suárez, Tolima</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL COMPACTO -->
+  <main class="relative z-10 space-y-2 pb-10">
+
+    <!-- 2. PRESENTACIÓN -->
+    <section id="presentation-section" class="py-4 px-3.5 max-w-md mx-auto">
+      <div class="bg-white/95 border border-rose-200/90 rounded-3xl p-5 shadow-lg text-center">
+        <p class="text-[11px] font-semibold text-rose-600 uppercase tracking-wide leading-relaxed mb-2">
+          Con la bendición de Dios y el amor de mi familia, tengo el honor de invitarte a celebrar mis quince años.
+        </p>
+        <p class="font-serif text-base text-slate-800 leading-relaxed italic my-2">
+          “Quince años de risas, de ilusiones y de sueños por cumplir. Hoy celebro la magia de la vida rodeada de quienes más quiero.”
+        </p>
+        <p class="font-script text-3xl text-rose-600 mt-2">Emely</p>
+        <p class="text-[10px] text-rose-400 tracking-widest uppercase font-semibold">Quinceañera</p>
+      </div>
+    </section>
+
+    <!-- 3. CUENTA REGRESIVA DINÁMICA -->
+    <section class="py-3 px-3.5 max-w-md mx-auto text-center">
+      <div class="bg-white/95 border border-rose-200/90 rounded-2xl p-4 shadow-md text-center">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-rose-500 font-bold block mb-2">Faltan Muy Pocos Días</span>
+        <h3 class="font-serif text-xl font-bold text-slate-800 mb-3">Cuenta Regresiva</h3>
+        
+        <div class="grid grid-cols-4 gap-2" id="countdown-grid">
+          <div class="flex flex-col items-center justify-center p-2 rounded-xl bg-rose-50/70 border border-rose-200">
+            <span class="font-serif text-xl font-bold text-slate-800 tabular-nums" id="cd-days">--</span>
+            <span class="text-[9px] text-rose-500 uppercase tracking-wider font-semibold mt-0.5">Días</span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-2 rounded-xl bg-rose-50/70 border border-rose-200">
+            <span class="font-serif text-xl font-bold text-slate-800 tabular-nums" id="cd-hours">--</span>
+            <span class="text-[9px] text-rose-500 uppercase tracking-wider font-semibold mt-0.5">Horas</span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-2 rounded-xl bg-rose-50/70 border border-rose-200">
+            <span class="font-serif text-xl font-bold text-slate-800 tabular-nums" id="cd-minutes">--</span>
+            <span class="text-[9px] text-rose-500 uppercase tracking-wider font-semibold mt-0.5">Min</span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-2 rounded-xl bg-rose-50/70 border border-rose-200">
+            <span class="font-serif text-xl font-bold text-slate-800 tabular-nums" id="cd-seconds">--</span>
+            <span class="text-[9px] text-rose-500 uppercase tracking-wider font-semibold mt-0.5">Seg</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. LUGAR DE LA CELEBRACIÓN (RECEPCIÓN & FIESTA) -->
+    <section id="ceremony-section" class="py-4 px-3.5 max-w-md mx-auto space-y-3">
+      <div class="text-center mb-2">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-rose-500 font-bold block">¿Dónde y Cuándo?</span>
+        <h2 class="font-serif text-2xl font-bold text-slate-800">Lugar de la Celebración</h2>
+      </div>
+
+      <!-- Fiesta y Recepción -->
+      <div class="bg-white/95 border border-rose-200/90 rounded-2xl p-5 shadow-md text-center">
+        <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center mx-auto text-amber-600 mb-2">
+          🥂
+        </div>
+        <span class="text-[10px] uppercase tracking-wider font-semibold text-amber-600">Gran Celebración de Gala</span>
+        <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Recepción & Fiesta</h3>
+        <div class="w-full space-y-1.5 py-2.5 border-y border-rose-100 text-xs text-slate-700">
+          <div>📅 <span class="font-semibold text-rose-600">Domingo, 1 de Noviembre de 2026</span></div>
+          <div>⏰ <span class="font-medium text-amber-700">07:00 PM</span></div>
+          <div>📍 <span class="font-medium text-slate-800">3529+R76 Suárez, Tolima</span></div>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=3529%2BR76+Su%C3%A1rez%2C+Tolima" target="_blank" class="mt-3 inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-gradient-to-r from-amber-50 to-rose-50 hover:from-amber-100 hover:to-rose-100 text-amber-900 border border-amber-200 text-xs font-semibold">
+          <span>Ver Ubicación en Mapa</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. ITINERARIO -->
+    <section id="itinerary-section" class="py-4 px-3.5 max-w-md mx-auto">
+      <div class="text-center mb-3">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-rose-500 font-bold block">Cronograma</span>
+        <h2 class="font-serif text-2xl font-bold text-slate-800">Itinerario de la Noche</h2>
+      </div>
+      <div class="bg-white/95 border border-rose-200/90 rounded-2xl p-4 shadow-md space-y-2.5" id="itinerary-list">
+        <!-- Generado por script -->
+      </div>
+    </section>
+
+    <!-- 6. DRESS CODE & REGALO / LLUVIA DE SOBRES -->
+    <section id="dresscode-section" class="py-4 px-3.5 max-w-md mx-auto space-y-3">
+      <div class="bg-white/95 border border-rose-200/90 rounded-2xl p-4 shadow-md text-center">
+        <span class="text-[10px] uppercase tracking-wider font-semibold text-rose-400">Dress Code</span>
+        <h3 class="font-serif text-lg font-bold text-slate-800 mb-1">Elegante / Traje Formal</h3>
+        <p class="text-xs text-slate-600 mb-3">Agradecemos lucir tus mejores galas para una noche inolvidable.</p>
+        <div class="p-2 rounded-xl bg-rose-50 border border-rose-200 text-left text-[11px] text-rose-700">
+          ⚠️ <strong>Color Reservado:</strong> Tonos rosados y fucsia reservados exclusivamente para la quinceañera.
+        </div>
+      </div>
+
+      <div class="bg-white/95 border border-rose-200/90 rounded-2xl p-4 shadow-md text-center">
+        <div class="flex items-center justify-center gap-2 mb-1">
+          <span class="text-base">🎁</span>
+          <span class="text-base">💌</span>
+        </div>
+        <span class="text-[10px] uppercase tracking-wider font-semibold text-amber-600">Detalle para la Quinceañera</span>
+        <h3 class="font-serif text-lg font-bold text-slate-800 mb-1">Regalo o Lluvia de Sobres</h3>
+        <p class="text-xs text-slate-600 mb-3">Tu presencia es mi mayor regalo. Si deseas hacerme un detalle, puedes traer un obsequio o participar en la lluvia de sobres. ¡Ambos serán recibidos con mucho amor!</p>
+        
+        <div class="space-y-2 text-left">
+          <div class="p-2.5 rounded-xl bg-rose-50 border border-rose-200 text-[11px] text-slate-700">
+            🎁 <strong class="text-rose-600">Obsequio / Regalo:</strong> Mesa dispuesta en el salón para colocar tu regalo personal.
+          </div>
+          <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-[11px] text-slate-700">
+            💌 <strong class="text-amber-700">Lluvia de Sobres:</strong> Cofre decorativo a la entrada para depositar tu sobre.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONFIRMACIÓN (RSVP WHATSAPP) -->
+    <section id="rsvp-section" class="py-4 px-3.5 max-w-md mx-auto">
+      <div class="bg-white/95 border border-rose-200/90 rounded-3xl p-5 shadow-xl">
+        <div class="text-center mb-3">
+          <span class="text-[10px] uppercase tracking-wider font-bold text-rose-500 block">Confirmación</span>
+          <h2 class="font-serif text-2xl font-bold text-slate-800">Confirmar Asistencia</h2>
+          <p class="text-xs text-slate-600 mt-1">Por favor confirma tu lugar para esta celebración.</p>
+        </div>
+
+        <form onsubmit="handleWhatsAppRsvp(event)" class="space-y-3">
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-rose-600 mb-1">Tu Nombre y Apellido *</label>
+            <input type="text" id="rsvp-name" required placeholder="Ej. Carlos Mendoza" class="w-full px-3 py-2.5 rounded-xl border border-rose-200 focus:outline-none focus:border-rose-400 text-xs" />
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-rose-600 mb-1">¿Podrás acompañarnos? *</label>
+            <select id="rsvp-attendance" class="w-full px-3 py-2.5 rounded-xl border border-rose-200 focus:outline-none focus:border-rose-400 text-xs">
+              <option value="yes">¡Sí, asistiré con mucha alegría!</option>
+              <option value="no">Lamentablemente no podré asistir</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-rose-600 mb-1">Mensaje para Emely (Opcional)</label>
+            <textarea id="rsvp-message" rows="2" placeholder="Escribe tus buenos deseos..." class="w-full px-3 py-2 rounded-xl border border-rose-200 focus:outline-none focus:border-rose-400 text-xs"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer mt-1">
+            <span>Confirmar por WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 8. CIERRE -->
+    <footer class="bg-white/95 border border-rose-200 rounded-3xl p-6 text-center max-w-md mx-auto shadow-lg">
+      <p class="font-serif text-base text-slate-800 italic mb-3">
+        “Tu presencia hará que este día sea aún más especial.”
+      </p>
+      <p class="font-script text-4xl text-rose-600 mb-1">Emely</p>
+      <p class="text-[10px] text-amber-700 font-medium tracking-widest uppercase">Mis XV Años • 3529+R76 Suárez, Tolima</p>
+      <p class="text-[11px] text-rose-400 mt-4">Diseñado con amor y dulzura para Emely 🌸</p>
+    </footer>
+
+  </main>
+
+  <script>
+    const CONFIG = {
+      celebrantName: "Emely",
+      whatsappNumber: "573000000000",
+      itinerary: [
+        { time: "07:00 PM", title: "Recepción de Invitados", desc: "Bienvenida con cóctel y asignación de mesas" },
+        { time: "08:00 PM", title: "Entrada Triunfal de Emely", desc: "Presentación estelar de la quinceañera" },
+        { time: "08:30 PM", title: "El Vals Solemne", desc: "Vals tradicional en familia" },
+        { time: "09:00 PM", title: "Brindis de Honor", desc: "Palabras de agradecimiento y bendición" },
+        { time: "09:30 PM", title: "Cena de Gala", desc: "Banquete especial para los invitados" },
+        { time: "10:30 PM", title: "Apertura de Pista y Baile", desc: "Música y fiesta hasta el final" }
+      ]
+    };
+
+    // Renderizar itinerario
+    const itContainer = document.getElementById('itinerary-list');
+    CONFIG.itinerary.forEach(item => {
+      const el = document.createElement('div');
+      el.className = "flex items-start gap-2.5 p-2.5 rounded-xl bg-rose-50/60 border border-rose-200/70 text-left";
+      el.innerHTML = `
+        <div class="px-1.5 py-0.5 rounded bg-white text-rose-500 font-bold text-[10px] uppercase shrink-0 border border-rose-200">${item.time}</div>
+        <div class="min-w-0">
+          <h4 class="font-serif font-bold text-xs text-slate-800">${item.title}</h4>
+          <p class="text-[11px] text-slate-600 leading-snug">${item.desc}</p>
+        </div>
+      `;
+      itContainer.appendChild(el);
+    });
+
+    // Manejar WhatsApp
+    function handleWhatsAppRsvp(e) {
+      e.preventDefault();
+      const name = document.getElementById('rsvp-name').value;
+      const att = document.getElementById('rsvp-attendance').value;
+      const msg = document.getElementById('rsvp-message').value;
+
+      let text = `¡Hola ${CONFIG.celebrantName}! ✨\n\n`;
+      if (att === 'yes') {
+        text += `Soy *${name}* y confirmo con mucha alegría mi asistencia a tus XV Años el 1 de Noviembre a las 7:00 PM en 3529+R76 Suárez, Tolima. 💖🎀\n`;
+      } else {
+        text += `Soy *${name}* y lamentablemente no podré asistir a tus XV Años, pero te deseo una noche mágica. 🌸\n`;
+      }
+      if (msg) text += `\nMensaje: "${msg}"\n`;
+
+      const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    }
+
+    // Cuenta regresiva al 1 de Noviembre de 2026
+    const targetDate = new Date('2026-11-01T19:00:00').getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        document.getElementById('cd-days').textContent = '00';
+        document.getElementById('cd-hours').textContent = '00';
+        document.getElementById('cd-minutes').textContent = '00';
+        document.getElementById('cd-seconds').textContent = '00';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-minutes').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cd-seconds').textContent = String(secs).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Canvas de pétalos
+    const canvas = document.getElementById('petals-canvas');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; });
+    const petals = Array.from({ length: 15 }, () => ({
+      x: Math.random() * w, y: Math.random() * h,
+      size: Math.random() * 6 + 4, speedY: Math.random() * 0.6 + 0.3,
+      speedX: Math.random() * 0.4 - 0.2
+    }));
+    function drawPetals() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = 'rgba(251, 113, 133, 0.3)';
+      petals.forEach(p => {
+        p.y += p.speedY; p.x += p.speedX;
+        if (p.y > h) { p.y = -10; p.x = Math.random() * w; }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size / 2, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(drawPetals);
+    }
+    drawPetals();
+  </script>
+</body>
+</html>
