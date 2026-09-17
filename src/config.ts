@@ -16,10 +16,10 @@ import { InvitationData } from './types';
 
 export const INITIAL_INVITATION_DATA: InvitationData = {
   // Nombre de la quinceañera
-  celebrantName: "Emely",
+  celebrantName: "Emely Gised Cadena",
 
   // Título de la celebración
-  celebrationTitle: "Mis XV Años",
+  celebrationTitle: "XV Años",
 
   // Ubicación general
   locationCity: "Suárez",
@@ -87,11 +87,10 @@ export const INITIAL_INVITATION_DATA: InvitationData = {
   ],
 
   // CÓDIGO DE VESTIMENTA (DRESS CODE)
-  dressCodeTitle: "Formal / Elegante",
-  dressCodeDescription:
-    "Traje formal para caballeros y vestido largo o cóctel para damas.",
+  dressCodeTitle: "Dress Code",
+  dressCodeDescription: "Ellas: Divinas   Ellos: Elegantes",
   dressCodeColorNote:
-    "El color rosado y sus tonalidades están reservados exclusivamente para Emely.",
+    "Para esta noche tan especial nos reservamos el color Fucsia y dorado",
 
   // SUGERENCIA DE REGALO (REGALO O LLUVIA DE SOBRES)
   giftTitle: "Regalo o Lluvia de Sobres",
@@ -99,7 +98,7 @@ export const INITIAL_INVITATION_DATA: InvitationData = {
     "Tu presencia es mi mayor y más hermoso regalo. Si deseas tener un detalle conmigo, puedes hacerme un obsequio o participar en la lluvia de sobres. ¡Ambas opciones las recibiré con todo mi cariño!",
 
   // WHATSAPP DE CONFIRMACIÓN (Editable)
-  whatsappNumber: "573000000000",
+  whatsappNumber: "573138431700",
 
   // TEXTOS DE PRESENTACIÓN Y FAMILIA
   romanticMessage:

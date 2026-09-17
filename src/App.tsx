@@ -4,7 +4,6 @@ import { HeroEditorial } from './components/HeroEditorial';
 import { EventPresentation } from './components/EventPresentation';
 import { CountdownSection } from './components/CountdownSection';
 import { CeremonyAndReception } from './components/CeremonyAndReception';
-import { ItinerarySection } from './components/ItinerarySection';
 import { DressCodeAndGifts } from './components/DressCodeAndGifts';
 import { RsvpSection } from './components/RsvpSection';
 import { ClosingSection } from './components/ClosingSection';
@@ -60,12 +59,6 @@ export default function App() {
           locationRegion={data.locationRegion}
           locationCountry={data.locationCountry}
           eventDate={data.eventDate}
-        />
-
-        {/* Itinerario / Cronograma de la Noche */}
-        <ItinerarySection
-          items={data.itinerary}
-          celebrantName={data.celebrantName}
         />
 
         {/* Código de Vestimenta y Lluvia de Sobres */}
