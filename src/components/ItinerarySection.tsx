@@ -32,43 +32,43 @@ export const ItinerarySection: React.FC<ItinerarySectionProps> = ({
   };
 
   return (
-    <section id="itinerary-section" className="py-6 px-3.5 max-w-md mx-auto">
-      <div className="text-center mb-4">
-        <div className="inline-flex items-center gap-1.5 mb-1">
-          <GoldenSparkle size={13} />
-          <span className="text-[10px] uppercase tracking-[0.2em] text-rose-500 font-bold">
+    <section id="itinerary-section" className="py-2.5 px-3 max-w-md mx-auto">
+      <div className="text-center mb-2.5">
+        <div className="inline-flex items-center gap-1.5 mb-0.5">
+          <GoldenSparkle size={12} />
+          <span className="text-[9px] uppercase tracking-[0.2em] text-rose-500 font-bold">
             Cronograma del Evento
           </span>
-          <GoldenSparkle size={13} />
+          <GoldenSparkle size={12} />
         </div>
-        <h2 className="font-serif-elegant text-2xl font-bold text-slate-800">
+        <h2 className="font-serif-elegant text-xl font-bold text-slate-800">
           Itinerario de la Noche
         </h2>
       </div>
 
-      <div className="bg-white/95 border border-rose-200/90 rounded-2xl p-4 shadow-md shadow-rose-100/50 space-y-2.5">
+      <div className="bg-white/95 border border-rose-200/90 rounded-2xl p-3 shadow-md shadow-rose-100/50 space-y-2">
         {items.map((item, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: index * 0.05 }}
-            className="flex items-start gap-3 p-2.5 rounded-xl bg-rose-50/60 border border-rose-200/70"
+            transition={{ duration: 0.3, delay: index * 0.04 }}
+            className="flex items-start gap-2.5 p-2 rounded-xl bg-rose-50/60 border border-rose-200/70"
           >
-            <div className="w-8 h-8 rounded-full bg-white border border-rose-300 flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+            <div className="w-7 h-7 rounded-full bg-white border border-rose-300 flex items-center justify-center shrink-0 shadow-sm mt-0.5">
               {getIcon(item.icon)}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between gap-1">
-                <h4 className="font-serif-elegant text-sm font-bold text-slate-800 truncate">
+                <h4 className="font-serif-elegant text-xs font-bold text-slate-800 truncate">
                   {item.title}
                 </h4>
-                <span className="text-[10px] font-bold text-rose-500 uppercase tracking-wider shrink-0 bg-white px-1.5 py-0.5 rounded border border-rose-200">
+                <span className="text-[9px] font-bold text-rose-600 uppercase tracking-wider shrink-0 bg-white px-1.5 py-0.5 rounded border border-rose-200">
                   {item.time}
                 </span>
               </div>
-              <p className="text-xs text-slate-600 mt-0.5 leading-snug">
+              <p className="text-[11px] text-slate-600 mt-0.5 leading-snug">
                 {item.description}
               </p>
             </div>

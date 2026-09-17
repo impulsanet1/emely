@@ -32,7 +32,7 @@ export default function App() {
       />
 
       {/* Contenido Editorial de la Invitación */}
-      <main className="relative z-10 space-y-2 pb-10">
+      <main className="relative z-10 space-y-1 pb-6">
         {/* Presentación Romántica y Familiar */}
         <EventPresentation
           celebrantName={data.celebrantName}

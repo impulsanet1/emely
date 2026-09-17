@@ -48,41 +48,41 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({
   };
 
   return (
-    <section id="rsvp-section" className="py-6 px-3.5 max-w-md mx-auto">
+    <section id="rsvp-section" className="py-2.5 px-3 max-w-md mx-auto">
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="bg-white/95 border border-rose-200/90 rounded-3xl p-5 shadow-xl shadow-rose-200/40"
+        transition={{ duration: 0.5 }}
+        className="bg-white/95 border border-rose-200/90 rounded-3xl p-4 shadow-lg shadow-rose-200/30"
       >
         {/* Encabezado */}
-        <div className="text-center mb-4">
-          <div className="inline-flex items-center justify-center p-2 rounded-full bg-rose-50 border border-rose-200 mb-2">
-            <HelloKittyBow size={28} color="pink" />
+        <div className="text-center mb-3">
+          <div className="inline-flex items-center justify-center p-1.5 rounded-full bg-rose-50 border border-rose-200 mb-1.5">
+            <HelloKittyBow size={24} color="pink" />
           </div>
 
-          <h2 className="font-serif-elegant text-2xl font-bold text-slate-800">
+          <h2 className="font-serif-elegant text-xl font-bold text-slate-800">
             Confirmar Asistencia
           </h2>
-          <p className="text-xs text-slate-600 mt-1 max-w-xs mx-auto">
+          <p className="text-[11px] text-slate-600 mt-0.5 max-w-xs mx-auto">
             Por favor confirma tu lugar en esta celebración tan especial.
           </p>
         </div>
 
         {/* Formulario */}
-        <form onSubmit={handleSubmit} className="space-y-3.5">
+        <form onSubmit={handleSubmit} className="space-y-2.5">
           {/* Nombre */}
           <div>
             <label
               htmlFor="guest-name-input"
-              className="block text-[11px] font-bold uppercase tracking-wider text-rose-600 mb-1"
+              className="block text-[10px] font-bold uppercase tracking-wider text-rose-600 mb-1"
             >
               Tu Nombre y Apellido *
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-rose-400">
-                <User className="w-4 h-4" />
+                <User className="w-3.5 h-3.5" />
               </div>
               <input
                 id="guest-name-input"
@@ -91,7 +91,7 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({
                 value={guestName}
                 onChange={(e) => setGuestName(e.target.value)}
                 placeholder="Ej. Carlos Mendoza"
-                className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-rose-50/40 border border-rose-200 focus:border-rose-400 focus:bg-white focus:outline-none text-slate-800 text-xs transition-all"
+                className="w-full pl-8 pr-3 py-2 rounded-xl bg-rose-50/40 border border-rose-200 focus:border-rose-400 focus:bg-white focus:outline-none text-slate-800 text-xs transition-all"
               />
             </div>
           </div>

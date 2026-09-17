@@ -73,22 +73,22 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({
   }, [resolvedTargetTime]);
 
   return (
-    <section id="countdown-section" className="py-4 px-3.5 max-w-md mx-auto text-center">
-      <div className="inline-flex items-center gap-1.5 mb-1.5">
-        <GoldenSparkle size={13} />
-        <span className="text-[10px] uppercase tracking-[0.2em] text-rose-500 font-bold">
+    <section id="countdown-section" className="py-2.5 px-3 max-w-md mx-auto text-center">
+      <div className="inline-flex items-center gap-1.5 mb-1">
+        <GoldenSparkle size={12} />
+        <span className="text-[9px] uppercase tracking-[0.2em] text-rose-500 font-bold">
           Faltan Muy Pocos Días
         </span>
-        <GoldenSparkle size={13} />
+        <GoldenSparkle size={12} />
       </div>
 
-      <h2 className="font-serif-elegant text-2xl font-bold text-slate-800 mb-3">
+      <h2 className="font-serif-elegant text-xl font-bold text-slate-800 mb-2">
         Cuenta Regresiva
       </h2>
 
       {isDateConfirmed ? (
-        <div className="bg-white/95 border border-rose-200/90 rounded-2xl p-3.5 shadow-md shadow-rose-100/50">
-          <div className="grid grid-cols-4 gap-2">
+        <div className="bg-white/95 border border-rose-200/90 rounded-2xl p-3 shadow-md shadow-rose-100/50">
+          <div className="grid grid-cols-4 gap-1.5">
             {[
               { label: 'Días', value: timeLeft.days },
               { label: 'Horas', value: timeLeft.hours },
@@ -97,12 +97,12 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({
             ].map((unit, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center justify-center p-2 rounded-xl bg-rose-50/70 border border-rose-200"
+                className="flex flex-col items-center justify-center p-1.5 rounded-xl bg-rose-50/70 border border-rose-200"
               >
-                <span className="font-serif-elegant text-xl font-bold text-slate-800 tabular-nums">
+                <span className="font-serif-elegant text-lg font-bold text-slate-800 tabular-nums">
                   {String(unit.value).padStart(2, '0')}
                 </span>
-                <span className="text-[9px] text-rose-500 uppercase tracking-wider font-semibold mt-0.5">
+                <span className="text-[8px] text-rose-500 uppercase tracking-wider font-semibold mt-0.5">
                   {unit.label}
                 </span>
               </div>
@@ -110,16 +110,16 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({
           </div>
         </div>
       ) : (
-        <div className="bg-white/95 border border-rose-200/90 rounded-2xl p-4 shadow-md shadow-rose-100/50 text-center">
-          <div className="inline-flex p-2 rounded-xl bg-rose-50 text-rose-500 mb-2">
-            <HelpCircle className="w-5 h-5 animate-pulse" />
+        <div className="bg-white/95 border border-rose-200/90 rounded-2xl p-3.5 shadow-md shadow-rose-100/50 text-center">
+          <div className="inline-flex p-1.5 rounded-xl bg-rose-50 text-rose-500 mb-1.5">
+            <HelpCircle className="w-4 h-4 animate-pulse" />
           </div>
 
-          <h3 className="font-serif-elegant text-base font-bold text-slate-800 mb-1">
+          <h3 className="font-serif-elegant text-sm font-bold text-slate-800 mb-0.5">
             Fecha pendiente de confirmación
           </h3>
 
-          <p className="text-xs text-slate-600 leading-relaxed font-light">
+          <p className="text-[11px] text-slate-600 leading-relaxed font-light">
             El contador se activará automáticamente al confirmar la fecha oficial en Suárez, Tolima.
           </p>
         </div>
